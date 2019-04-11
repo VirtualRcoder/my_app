@@ -1,19 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//function Greeting(){
-//stateless functional component
-//always return JSX
+//JSX RULES
+//reutrn single element
+//div / section / article
+//use camelCase for html attribute
+//className instead of class
+//close every element 
+//formatting
 
-//	return (<div>
-//		<h1>My first React app</h1>
-//		</div>);
-//}
-/*three arguments element, propsObject, children*/
+//ES6, Nested Components and React Tools
 
 function Greeting(){
 
-	return React.createElement("div",{},"My first react app")
+	return (
+		<section>
+			<Person/>
+			<Message/>
+		</section>		
+		);
 }
 
+const Person =() => <h2>Shubham Sharma</h2>;
+const Message =() => <p>This is my third year</p>;
 ReactDOM.render(<Greeting/>, document.getElementById('root'));
