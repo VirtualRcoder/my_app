@@ -5,7 +5,7 @@ import ReactDom from "react-dom";
 
 function Books() {
   return (
-    <section>
+  	  <section style={{background:"orange"}}>
       <Book />
       <Book1 />
     </section>
@@ -13,7 +13,7 @@ function Books() {
 }
 const Book = () => {
   return (
-    <article>
+    <article style={{background:"pink"}}>
       <CoverImage />
       <Title />
       <Author />
@@ -23,7 +23,7 @@ const Book = () => {
 
 const Book1 = () => {
   return (
-    <article>
+    <article style={{background:"powderblue"}}>
       <CoverImage1 />
       <Title1 />
       <Author1 />
@@ -32,7 +32,8 @@ const Book1 = () => {
 };
 
 const CoverImage = () => (
-  <img
+  <img style={{ padding: "20px",margin: "20px",background: "#fff",
+    border: "1px solid black"}}
     width="200"
     src="https://images-na.ssl-images-amazon.com/images/I/71N4oeWwYlL._AC_UL200_SR200,200_.jpg"
     alt="wonkey donkey"
@@ -40,13 +41,14 @@ const CoverImage = () => (
 );
 
 const CoverImage1 = () => (
-  <img
+  <img style={{ padding: "20px",margin: "20px",background: "#fff",
+    border: "1px solid black"}}
     width="200"
     src="https://images-na.ssl-images-amazon.com/images/I/71N4oeWwYlL._AC_UL200_SR200,200_.jpg"
     alt="wonkey donkey"
   />
 );
-const Title = () => <h1>The Donkey</h1>;
+const Title = () => (<h1 style={{color:"red"}}>The Donkey</h1>);
 const Author = () => <p>by ASR</p>;
 
 const Title1 = () => <h1>The Sad story</h1>;
