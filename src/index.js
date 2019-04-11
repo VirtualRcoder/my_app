@@ -1,24 +1,43 @@
 import React from "react";
 import ReactDom from "react-dom";
 // import "./index.css";
-//ES6, Nested Components and React Tools
 
-const btnText = "small button";
+//CHILDREN PROPS
 
-function Person() {
-  const btn = "search button";
-  const name = "peter";
-  const lastName = "doe";
+function People() {
+  const friends = [
+    { name: "john", job: "developer", age: 23, company: "apple" },
+    { name: "bob", job: "designer", age: 21, company: "facebook" },
+    { name: "susy", job: "artist", age: 26, company: "google" }
+  ];
   return (
     <section>
-      <button>{btnText}</button>
-      {/* <h2>{name + " " + lastName}</h2> */}
-      <h2>{`${name} ${lastName}`}</h2>
-      <p>info</p>
-      <p>{12 + 35}</p>
-      {/* <p>{let x = 6}</p> */}
+      <Person person={friends[0]}>
+        <div>
+          <h1>some heading</h1>
+          <p>some info about </p>
+        </div>
+      </Person>
+      <Person person={friends[1]} />
+      <Person person={friends[2]} />
     </section>
   );
 }
 
-ReactDom.render(<Person />, document.getElementById("root"));
+const Person = props => {
+  const { name, job, age, company } = props.person;
+  const { children } = props;
+
+  return (
+    <article>
+      <h1>{name}</h1>
+      {children}
+      <p>{job}</p>
+      <p>{age}</p>
+      <p>{company}</p>
+      <hr />
+    </article>
+  );
+};
+
+ReactDom.render(<People />, document.getElementById("root"));
